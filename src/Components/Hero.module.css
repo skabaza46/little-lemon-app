@@ -1,0 +1,44 @@
+
+.hero{
+    background-color: #495E57;
+    color:white;
+
+    /* border-radius: 1%; */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 2px 16px;
+    border-radius: 5px;
+
+}
+
+.hero p {
+    width: 350px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #F4CE14;
+    font-size: 20px;
+    margin: 5px;
+}
+button:hover{
+    opacity: 50%;
+    font-size: 18px;
+}
+
+.company_info{
+    margin-left: 10%;
+
+
+}
+
+.title {
+    color: #F4CE14;
+}
+
+.featured_food {
+    position: absolute;
+    border-radius: 10px;
+    margin-top:5%;
+}

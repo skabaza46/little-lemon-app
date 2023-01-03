@@ -1,0 +1,64 @@
+
+
+.parent {
+    margin-top: 10%;
+    width: 50%;
+}
+
+button {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #F4CE14;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.specialsPrices {
+    color: #EE9972;
+    float: right;
+    font-size: 16px;
+}
+
+.orderADelivery {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.orderADelivery:hover {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.floatRight {
+    float: right;
+}
+
+.weeksSpecials {
+    margin-bottom: 4%;
+}
+
+.specialsItem {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #EDEFEE;
+    width: 18rem;
+    height: 100% !important;
+}
+
+.specialsItem p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.parentSpecialsItem {
+    margin-bottom: 5%;
+
+}
+
+
+/* background-color: #EDEFEE; */
