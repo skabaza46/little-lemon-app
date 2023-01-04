@@ -1,12 +1,19 @@
 import { Container, Row, Col , Card, Button} from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShippingFast } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShippingFast } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import classes from './Highlights.module.css';
 
 const Heighlights = (props) => {
     const imageHeight = 250;
 
     const orderADeliveryElement = <FontAwesomeIcon icon={faShippingFast} />
+    const navigate = useNavigate();
+
+    const onlineOrder = () => {
+
+        navigate('/menu')
+    }
 
     return (
         <Container className={classes.parent}>
@@ -15,7 +22,7 @@ const Heighlights = (props) => {
                     <h3>This Weeks Specials!</h3>
                 </Col>
                 <Col>
-                    <button className={classes.floatRight}>Online Menu</button>
+                    <button className={classes.floatRight} onClick={onlineOrder}>Online Menu</button>
                 </Col>
             </Row>
             <Container>
