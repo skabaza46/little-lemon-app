@@ -10,13 +10,10 @@ const Main = (props) => {
     return (
         <Fragment>
             <main>
-
                 <Heighlights />
                 <Testimonials />
                 <About />
-
             </main>
-            <Footer />
         </Fragment>
     )
 };
