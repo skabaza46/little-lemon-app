@@ -1,8 +1,5 @@
-import React, { Fragment, useState } from "react"
-
-import Button from 'react-bootstrap/Button';
+import React, {useState } from "react"
 import Form from 'react-bootstrap/Form';
-import TimePicker from 'react-bootstrap-time-picker';
 import BookingConfirmation from './BookingConfirmation';
 import { useFormik } from 'formik';
 import { Card, Col, Container, Row } from "react-bootstrap";
@@ -28,29 +25,12 @@ const BookingPage = () => {
             email: '',
         },
         onSubmit: values => {
-          alert(JSON.stringify(values, null, 2));
-
           setReservation((prevState)=> (
             {...prevState, ...values}
           ));
           setShow(true);
         },
-
-        // onChange: (values) => {
-        //     alert(values)
-        //     const date = new Date(values)
-        //     console.log(date)
-        // }
       });
-
-
-    //   const handleTimeChange = (values) =>{
-    //     console.log(values);
-
-    //     setReservation((prevState)=> (
-    //         {...prevState, ...{}}
-    //       ));
-    //   }
 
     return (
         <Container>
