@@ -25,8 +25,8 @@ const OnlineMenu = () => {
                                 The famous greek salad of crispy lettuce, peppers, olives and our Chicago style
                                 feta cheese, garnished with crunchy garlic and rosemary croutons.
                             </Card.Text>
-                            <Link to="/order-online">
-                                <a className={classes.addToCartElement}>{cartName} {addToACartIcon}</a>
+                            <Link to="/order-online" className={classes.addToCartElement}>
+                                {cartName} {addToACartIcon}
                             </Link>
                         </Card.Body>
                     </Card>
@@ -40,8 +40,8 @@ const OnlineMenu = () => {
                                 Our Bruschetta is made from grilled bread that has been smeared with
                                 garlic and seasoned with salt and olive oil.
                             </Card.Text>
-                            <Link to="/order-online">
-                                <a className={classes.addToCartElement}>{cartName} {addToACartIcon}</a>
+                            <Link to="/order-online" className={classes.addToCartElement}>
+                                {cartName} {addToACartIcon}
                             </Link>
                         </Card.Body>
                     </Card>
@@ -55,8 +55,8 @@ const OnlineMenu = () => {
                                 This comes stright from grandma's recipe book, every last ingredient has been
                                 sourced and is as authentic as can be imagined.
                             </Card.Text>
-                            <Link to="/order-online">
-                                <a className={classes.addToCartElement}>{cartName} {addToACartIcon}</a>
+                            <Link to="/order-online" className={classes.addToCartElement}>
+                                {cartName} {addToACartIcon}
                             </Link>
 
                         </Card.Body>
