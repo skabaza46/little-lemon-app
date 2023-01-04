@@ -9,6 +9,7 @@ import Layout from './Components/Layout';
 import About from './Components/About';
 import OnlineOrder from './Components/OnlineOrder';
 import LoginPage from './Components/Login';
+import OnlineMenu from './Components/OnlineMenu';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/order-online" element={<OnlineOrder />}/>
             <Route path="/login" element={<LoginPage />}/>
+            <Route path="/menu" element={<OnlineMenu />}/>
           </Routes>
 
       </Layout>

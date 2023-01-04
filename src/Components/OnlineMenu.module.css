@@ -1,0 +1,44 @@
+.onlineMenuContainer {
+    margin-top: 10%;
+}
+.center {
+    text-align: center;
+}
+
+.addToCartElement {
+    text-decoration: none;
+    color: #333333;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.addToCartElement:hover {
+    font-size: 18px;
+    text-decoration: none;
+    color: #333333;
+}
+
+
+
+
+.floatRight {
+    float: right;
+}
+
+.menuItem {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #EDEFEE;
+    width: 18rem;
+    height: 100% !important;
+}
+
+.menuItem p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.parentMenuItem {
+    margin-bottom: 5%;
+
+}
