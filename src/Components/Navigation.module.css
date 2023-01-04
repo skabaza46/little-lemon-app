@@ -1,4 +1,12 @@
-.linkstyle {
-    font-weight: bolder !important;
-    color:black !important;
+a {
+    text-decoration: none;
+	font-family: Cambria, serif;
+	font-size: 24px !important;
+	font-style: normal;
+	font-weight: normal !important;
+	text-transform: normal;
+	letter-spacing: normal;
+    color: black !important;
 }
+
+
