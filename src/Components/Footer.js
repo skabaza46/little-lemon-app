@@ -23,7 +23,7 @@ const Footer = () => {
 
                             <br/>
                             <strong>Phone:</strong> +1 312-375-7584<br/><br/>
-                            <strong>Email:</strong> info@littelemon.com
+                            <strong>Email:</strong> info@littlelemon.com
                         </p>
                     </div>
 
