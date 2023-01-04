@@ -5,12 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Hero = (props) => {
 
     const navigate = useNavigate();
-    const routeName = props.routeName;
 
-    var path = window.location.pathname;
-    var page = path.split("/").pop();
-
-    //alert(page)
     // Navigate the user to the booking page
     const reserveTable = () => {
 
