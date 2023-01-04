@@ -22,9 +22,20 @@ button {
     font-size: 20px;
     margin: 5px;
 }
+
 button:hover{
     opacity: 50%;
     font-size: 18px;
+}
+
+
+.backButton {
+    padding: 1%;
+    font-size: 16px;
+    width: 10%;
+    height: 80%;
+    border-radius: 8%;
+    margin: 1%;
 }
 
 .company_info{
@@ -40,5 +51,5 @@ button:hover{
 .featured_food {
     position: absolute;
     border-radius: 10px;
-    margin-top:5%;
+    margin-top: 5%;
 }

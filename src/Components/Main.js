@@ -11,7 +11,6 @@ const Main = (props) => {
     return (
         <Fragment>
             <main>
-                <Hero />
                 <Heighlights />
                 <Testimonials />
                 <About />

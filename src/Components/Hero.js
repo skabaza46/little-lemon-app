@@ -2,17 +2,32 @@ import classes from './Hero.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const Hero = () => {
+const Hero = (props) => {
 
     const navigate = useNavigate();
+    const routeName = props.routeName;
 
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+
+    //alert(page)
+    // Navigate the user to the booking page
     const reserveTable = () => {
 
         navigate('/booking')
     }
+
+    // Navigate back
+    const  backButton = () => {
+        navigate(-1)
+    }
+
     return (
         <Container className={classes.hero}>
             <Row>
+                <div>
+                    <button className={classes.backButton} onClick={backButton}>Back</button>
+                </div>
                 <Col className={classes.company_info}>
                     <h1 className={classes.title}>Little Lemon</h1>
                     <h3>Chicago</h3>
