@@ -1,26 +1,23 @@
 import './App.css';
 import { Fragment } from 'react';
-import Header from './Components/Header';
+
+import { Routes, Route } from "react-router-dom";
+
 import Main from './Components/Main';
-import Footer from './Components/Footer';
-import Heighlights from './Components/Highlights';
-import Testimonials from './Components/Testimonials';
-import About from './Components/About';
-import Hero from './Components/Hero';
+
+import BookingPage from './Components/BookingPage';
+import Layout from './Components/Layout';
 
 function App() {
   return (
-    <Fragment  >
-      <Header />
-      <Main>
-        <Hero />
-        <Heighlights />
-        <Testimonials />
-        <About />
-      </Main>
-      <Footer />
-    </Fragment>
+      <Layout>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/booking" element={<BookingPage />} />
+          </Routes>
 
+      </Layout>
+    
   );
 }
 
