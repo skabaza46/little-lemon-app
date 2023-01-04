@@ -20,8 +20,7 @@ const Testimonials = (props) => {
                         <Card.Img variant="top" src="testimonials/ashley-campbell.jpeg" height={250} style={{borderRadius: "50%"}}/>
                         <Card.Body>
                             <blockquote>
-                                "Some quick example text to build on the card title and make up the
-                                bulk of the card's content."
+                                "Fusce at laoreet arcu. Nam a mauris sit amet dui maximus tristique ut sit amet est. Sed vitae rutrum libero."
                                 <footer>
                                     — <cite className="author">Ashley Compbell</cite>, <cite className="company">My Company</cite>
                                 </footer>
@@ -43,8 +42,7 @@ const Testimonials = (props) => {
                         <Card.Img variant="top" src="testimonials/jesse-wallbridge.jpeg"  height={250} style={{borderRadius: "50%"}}/>
                         <Card.Body>
                             <blockquote>
-                                    "Some quick example text to build on the card title and make up the
-                                bulk of the card's content."
+                                    "Maecenas ac ligula tincidunt, blandit est eget, iaculis nunc. Praesent vel tempor tortor. Quisque feugiat feugiat massa."
                                     <footer>
                                         — <cite className="author">Jesse Wallbridge</cite>, <cite className="company">My Company</cite>
                                     </footer>
@@ -67,8 +65,7 @@ const Testimonials = (props) => {
                         <Card.Body>
 
                             <blockquote>
-                                "Some quick example text to build on the card title and make up the
-                            bulk of the card's content."
+                                "Phasellus ut suscipit purus. Donec finibus, metus id semper gravida, erat diam consectetur risus, quis varius eros risus at mi.."
                                 <footer>
                                     — <cite className="author">Andy Chris</cite>, <cite className="company">My Company</cite>
                                 </footer>
