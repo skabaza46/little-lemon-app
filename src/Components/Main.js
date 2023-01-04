@@ -2,8 +2,6 @@ import { Fragment } from 'react';
 import Heighlights from './Highlights';
 import Testimonials from './Testimonials';
 import About from './About';
-import Footer from './Footer';
-
 
 const Main = (props) => {
 
@@ -12,7 +10,7 @@ const Main = (props) => {
             <main>
                 <Heighlights />
                 <Testimonials />
-                <About />
+                {/* <About /> */}
             </main>
         </Fragment>
     )
