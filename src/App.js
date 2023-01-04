@@ -8,6 +8,7 @@ import BookingPage from './Components/BookingPage';
 import Layout from './Components/Layout';
 import About from './Components/About';
 import OnlineOrder from './Components/OnlineOrder';
+import LoginPage from './Components/Login';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/order-online" element={<OnlineOrder />}/>
+            <Route path="/login" element={<LoginPage />}/>
           </Routes>
 
       </Layout>
