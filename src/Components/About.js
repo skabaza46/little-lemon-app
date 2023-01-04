@@ -38,10 +38,3 @@ const About = () => {
 };
 
 export default About;
-
-
-<div>
-    <p>Name</p>
-    <p>Description</p>
-    <p>Photos of Adrian and Mario</p>
-</div>
