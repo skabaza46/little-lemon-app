@@ -1,6 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faStarAndCrescent } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import RegularStar from "./RegularStar";
 import classes from './Testimonials.module.css';
 
@@ -16,7 +16,7 @@ const Testimonials = (props) => {
 
             <Row>
                 <Col>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} className={classes.testimonialsParent}>
                         <Card.Img variant="top" src="testimonials/ashley-campbell.jpeg" height={250} style={{borderRadius: "50%"}}/>
                         <Card.Body>
                             <blockquote>
@@ -38,7 +38,7 @@ const Testimonials = (props) => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} className={classes.testimonialsParent}>
                         <Card.Img variant="top" src="testimonials/jesse-wallbridge.jpeg"  height={250} style={{borderRadius: "50%"}}/>
                         <Card.Body>
                             <blockquote>
@@ -60,7 +60,7 @@ const Testimonials = (props) => {
                     </Card>
                 </Col>
                 <Col>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '18rem' }} className={classes.testimonialsParent}>
                         <Card.Img variant="top" src="testimonials/andy-chris-testimonial.jpeg" height={250} style={{borderRadius: "50%"}}/>
                         <Card.Body>
 

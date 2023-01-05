@@ -4,6 +4,7 @@ import BookingConfirmation from './BookingConfirmation';
 import { useFormik } from 'formik';
 import { Alert, Card, Col, Container, Row } from "react-bootstrap";
 import { fetchAPI } from "../utils/api-test";
+import { range } from "../utils/range";
 import classes from './BookingPage.module.css';
 import moment from "moment/moment";
 
@@ -53,7 +54,9 @@ const BookingPage = () => {
 
             resetForm();
             // Reset selected reservation timeslot
-            document.getElementById('reservation_time').value = "0";
+            document.getElementById('reservation_time').value = "";
+            document.getElementById('occasion').value = "";
+            document.getElementById('number_of_diners').value = "0";
 
 
           }else{
@@ -113,7 +116,7 @@ const BookingPage = () => {
                             <Form.Group className="mb-3" controlId="reservation_time">
                                 <Form.Label>Reservation Time</Form.Label>
                                 <Form.Select id="reservation_time" onChange={formik.handleChange} required>
-                                    <option key="0"> </option>
+                                    <option key="0" value="">Select Time</option>
                                 {
                                      initializeTimes.map((time)=>{
                                         return <option value={time} key={time} >{time}</option>
@@ -122,16 +125,29 @@ const BookingPage = () => {
                                 </Form.Select>
                             </Form.Group>
 
-
+                            <Form.Group className="mb-3" controlId="occasion">
+                                <Form.Label>Occasion</Form.Label>
+                                <Form.Select id="occasion" onChange={formik.handleChange} required>
+                                    <option value="">Select Occasion</option>
+                                    <option value="Birthday">Birthday</option>
+                                    <option value="Engagement">Engagement</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                </Form.Select>
+                            </Form.Group>
                             <Form.Group className="mb-3" controlId="number_of_diners">
                                 <Form.Label>Number of Diners</Form.Label>
-                                <Form.Control type="number" placeholder="Number of Diners"  onChange={formik.handleChange}
-                                value={formik.values.number_of_diners}
-                                max={20}
-                                min={1}
-                                required
-                            />
+                                <Form.Select id="number_of_diners" onChange={formik.handleChange} required>
+                                    <option value="0" key="0">No. of Diners</option>
+                                    {range(1,10).map((diner)=>{
+                                        if (diner === 1){
+                                            return <option value={diner} key={diner}>{diner}-Diner</option>
+                                        }
+                                        return <option value={diner} key={diner}>{diner}-Diners</option>
+                                    })}
+
+                                </Form.Select>
                             </Form.Group>
+
                         </Col>
 
                         <Col>
@@ -165,7 +181,7 @@ const BookingPage = () => {
 
                         </Col>
                             <Row>
-                                { showError && <Alert variant='danger'>Reservation <strong>{selectedReservation}</strong> already exists!</Alert>}
+                                { showError && <Alert variant='danger'>Reservation <strong>{selectedReservation}</strong> already taken !</Alert>}
 
                                 <button type="submit">Submit</button>
                             </Row>

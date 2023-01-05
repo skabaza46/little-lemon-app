@@ -5,7 +5,7 @@ import classes from './BookingConfirmation.module.css';
 
 const BookingConfirmation = (props) => {
 
-    const {first_name, last_name, email, number_of_diners, reservation_date, reservation_time  } = props.reservation;
+    const {first_name, last_name, email, number_of_diners, reservation_date, reservation_time, occasion } = props.reservation;
 
     return (
         <Fragment>
@@ -36,7 +36,11 @@ const BookingConfirmation = (props) => {
 
                             <div>
                                 <span className={classes.title}> Number of Diners: </span>
-                                <span className={classes.information}>{number_of_diners}</span>
+                                <span className={classes.information}>{number_of_diners}-Diners</span>
+                            </div>
+                            <div>
+                                <span className={classes.title}> Occasion: </span>
+                                <span className={classes.information}>{occasion}</span>
                             </div>
                         </Col>
 

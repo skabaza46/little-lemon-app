@@ -8,3 +8,8 @@
 .testimonialsTitle > p{
     font-size: 13.5px;
 }
+
+.testimonialsParent {
+
+    border: none !important;
+}

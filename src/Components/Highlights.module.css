@@ -30,9 +30,9 @@ button {
 }
 
 .orderADelivery:hover {
-    font-size: 18px;
+    font-size: 189px;
     text-decoration: none;
-    color: #333333;
+    color: #F4CE14 !important;
 }
 
 .floatRight {
