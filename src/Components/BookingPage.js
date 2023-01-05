@@ -91,7 +91,7 @@ const BookingPage = () => {
     const showError = reservationExists === true && selectedReservation !== null;
 
     return (
-        <Container>
+        <Container className={classes.bookingParent}>
 
                 <BookingConfirmation show={show} handleClose={handleClose} reservation={reservation}/>
                 <Row className="mb-3 ">
