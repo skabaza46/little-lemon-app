@@ -1,52 +1,125 @@
-import React, {useState } from "react"
+import React, {useState, useEffect } from "react"
 import Form from 'react-bootstrap/Form';
 import BookingConfirmation from './BookingConfirmation';
 import { useFormik } from 'formik';
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Alert, Card, Col, Container, Row } from "react-bootstrap";
+import { fetchAPI } from "../utils/api-test";
+import classes from './BookingPage.module.css';
+import moment from "moment/moment";
 
-import classes from './BookingPage.module.css'
-;
 const BookingPage = () => {
+    const [ initializeTimes, setInitializeTimes] = useState([]);
+    const [ reservedTimes , setReservedTimes] = useState([]);
+    const [ reservationExists, setReservationExists ] = useState(true);
+    const [ selectedReservation, setSelectedReservation ] = useState(null);
 
     const [show, setShow] = useState(false);
     const [reservation, setReservation ] = useState({});
 
-
     const handleClose = () => setShow(false);
-
 
 
     const formik = useFormik({
         initialValues: {
-            reservation_date_time: '',
+            reservation_date: '',
+            reservation_time: '',
             number_of_diners: '',
             first_name: '',
             last_name: '',
             email: '',
         },
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
           setReservation((prevState)=> (
             {...prevState, ...values}
           ));
-          setShow(true);
+
+          const {reservation_date, reservation_time} = values;
+          const reservationHash = (`${reservation_date}-${reservation_time}`);
+
+          const reservationExists = reservedTimes.filter((hash)=> hash === reservationHash);
+
+          if (reservationExists.length === 0){
+
+            setSelectedReservation(null);
+            setReservationExists(false);
+
+            setShow(true);
+
+            const copyReservedTimes = [...reservedTimes];
+
+            copyReservedTimes.push(reservationHash);
+
+            setReservedTimes(copyReservedTimes);
+
+            resetForm();
+            // Reset selected reservation timeslot
+            document.getElementById('reservation_time').value = "0";
+
+
+          }else{
+            setReservationExists(true);
+            setSelectedReservation(reservationHash);
+
+          }
+
         },
       });
 
+
+    useEffect(()=>{
+        const date = new Date();
+        const apiData = fetchAPI(date);
+        const newData = apiData.map((time)=>{
+            const time_ = moment(time, "h:mm A").format("hh:mm A");
+            return time_;
+        })
+        setInitializeTimes(newData)
+
+
+        const timer = setTimeout(function() {
+            setSelectedReservation(null);
+            setReservationExists(false);
+        }, 3000);
+
+
+        return () => {
+            clearTimeout(timer);
+          };
+
+    },[reservationExists, selectedReservation])
+
+    const showError = reservationExists === true && selectedReservation !== null;
+
     return (
         <Container>
+
                 <BookingConfirmation show={show} handleClose={handleClose} reservation={reservation}/>
                 <Row className="mb-3 ">
+
                     <Card >
                         <Form onSubmit={formik.handleSubmit} >
+
                         <h1 className={classes.center}>Reservation</h1>
                         <Col>
-
-                            <Form.Group className="mb-3" controlId="reservation_date_time">
+                            <Form.Group className="mb-3" controlId="reservation_date">
                                     <Form.Label>Reservation Date </Form.Label>
-                                    <Form.Control  type="datetime-local" onChange={formik.handleChange}
-                                    value={formik.values.reservation_date_time}
+                                    <Form.Control  type="date" onChange={formik.handleChange}
+                                    value={formik.values.reservation_date}
                                     required
                                 />
+                            </Form.Group>
+
+
+                            <Form.Group className="mb-3" controlId="reservation_time">
+                                <Form.Label>Reservation Time</Form.Label>
+                                <Form.Select id="reservation_time" onChange={formik.handleChange} required>
+                                    <option key="0"> </option>
+                                {
+                                     initializeTimes.map((time)=>{
+                                        return <option value={time} key={time} >{time}</option>
+                                    })
+                                }
+                                </Form.Select>
                             </Form.Group>
 
 
@@ -92,6 +165,8 @@ const BookingPage = () => {
 
                         </Col>
                             <Row>
+                                { showError && <Alert variant='danger'>Reservation <strong>{selectedReservation}</strong> already exists!</Alert>}
+
                                 <button type="submit">Submit</button>
                             </Row>
                         </Form>

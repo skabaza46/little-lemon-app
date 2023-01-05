@@ -1,13 +1,11 @@
 
 import { Fragment } from "react";
-import { Modal, Button,Form, Row, Col } from "react-bootstrap";
-import moment from "moment/moment";
+import { Modal, Row, Col } from "react-bootstrap";
 import classes from './BookingConfirmation.module.css';
-import Moment from 'react-moment';
 
 const BookingConfirmation = (props) => {
 
-    const {first_name, last_name, email, number_of_diners, reservation_date_time  } = props.reservation;
+    const {first_name, last_name, email, number_of_diners, reservation_date, reservation_time  } = props.reservation;
 
     return (
         <Fragment>
@@ -26,7 +24,7 @@ const BookingConfirmation = (props) => {
                             <div>
                                 <span className={classes.title}>Date and Time: </span>
                                 <span className={classes.information}>
-                                    <Moment format="MM-DD-YYYY @ h:mm A">{reservation_date_time}</Moment>
+                                 {`${reservation_date} @ ${reservation_time}`}
                                 </span>
 
                             </div>
